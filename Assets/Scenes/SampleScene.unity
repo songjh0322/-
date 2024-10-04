@@ -1039,7 +1039,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -3803466081661082397, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 2752588384504392991, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.8619244
+      m_AnimationSpeed: 1.9404314
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 0, y: 1, z: 0}
@@ -1048,7 +1048,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -3803466081661082397, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
       - {fileID: 2752588384504392991, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
-      m_AnimationSpeed: 1.3425279
+      m_AnimationSpeed: 2.9182222
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -1118,6 +1118,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1199,6 +1200,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 16
+  m_RefResolutionX: 1280
+  m_RefResolutionY: 720
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &961027462
 GameObject:
   m_ObjectHideFlags: 0
