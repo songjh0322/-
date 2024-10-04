@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\TopDown 2D RPG BE3\ReadMe\Scripts\ReadmeBE3.cs" />
+    <Compile Include="Assets\Scripts\PlayerAction.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
