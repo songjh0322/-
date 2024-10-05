@@ -1,0 +1,44 @@
+Rule tile: 규칙을 정할 수 있는 타일
+
+Focus on : 타일맵 두 개 이상 작업할 때 유용한 기능
+
+<애니메이션 타일>
+
+<외부 경계>
+->플레이어가 맵 못나가게 가두는 역할
+막히는거나 콜라이더 들어갈때는 꼭 Rigidbody 2D, Composite Collider 2D, Tilemap Collider 2D가 같이 있으면 좋다
+(타일맵 콜라이더는 복합 콜라이더와 사용하면 좋다)
+Tilemap Collider 2D에 Used by composite 체크
+
+Mask Interaction을 빌려서 보이지 않게 가능
+Inspector -> Tilemap Renderer -> Mask Interaction -> Visible Inside Mask
+
+<픽셀 퍼펙트>
+픽셀이 깨지는 이유는 픽셀이 카메라랑 충돌이 일어나서 그렇다.
+
+Window -> package Manager : 기본 외 플러그인 패키지 관리창
+
+2D pixcel Perfect: 픽셀 깨짐을 해결하는 카메라 플러그인
+
+
+
+======================================
+
+쯔구르 느낌으로 가려면 대각선 이동을 제한해야 함
+<십자 이동>
+<애니메이션 설정>
+방향 전환이 바로 되도록 Any State 사용
+
+Transition을 연속적으로 태우면 애니메이션이 작동되지 않음
+
+방향 변화 매개변수를 추가하여 한번만 실행되도록 변경
+
+양쪽 버튼 누른 상태로 하나만 버튼 업이면 문제 발생(키씹힘)
+-> 현재 AxisRaw 값에 따라 수평, 수직 판단하여 해결
+
+
+<조사 액션>
+보통 스캔류는 Ray를 쓴다.
+현재 바라보고 있는 방향 값을 가진 변수 필요
+DrawRay로 미리 보고 RayCast를 구현하면 쉽다.
+조사 가능한 오브젝트를 다른 Layer로 설정

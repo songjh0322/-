@@ -38,6 +38,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 3
     m_ConditionEvent: vAxisRaw
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isChange
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8997713115185893935}
   m_Solo: 0
@@ -115,6 +118,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: hAxisRaw
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isChange
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3409267752723866738}
@@ -194,6 +200,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: vAxisRaw
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isChange
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5447038821690956173}
   m_Solo: 0
@@ -225,6 +234,12 @@ AnimatorController:
     m_Controller: {fileID: 9100000}
   - m_Name: vAxisRaw
     m_Type: 3
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: isChange
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -360,7 +375,7 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: -100, y: 100, z: 0}
+  m_AnyStatePosition: {x: -90, y: 100, z: 0}
   m_EntryPosition: {x: 70, y: 320, z: 0}
   m_ExitPosition: {x: 70, y: 370, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -400,6 +415,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: hAxisRaw
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isChange
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5105858892348566382}
