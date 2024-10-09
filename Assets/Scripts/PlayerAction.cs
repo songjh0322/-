@@ -7,28 +7,31 @@ public class PlayerAction : MonoBehaviour
     float h;
     float v;
     public float speed = 5f;
+    public GameManager manager;
     bool isHorizonMove;
     Rigidbody2D rigid;
     Animator anim;
-    Vector3 dirVec;
+    Vector2 dirVec;
     GameObject scanObject;
+    RaycastHit2D rayHit;
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
     }
 
     private void Update()
     {
         //Move Value
-        h = Input.GetAxisRaw("Horizontal");
-        v = Input.GetAxisRaw("Vertical");
+        h = manager.isAction ? 0 : Input.GetAxisRaw("Horizontal");
+        v = manager.isAction ? 0 : Input.GetAxisRaw("Vertical");
 
         //Check Button Down & Up
-        bool hDown = Input.GetButtonDown("Horizontal");
-        bool vDown = Input.GetButtonDown("Vertical");
-        bool hUp = Input.GetButtonUp("Horizontal");
-        bool vUp = Input.GetButtonUp("Vertical");
+        bool hDown = manager.isAction ? false : Input.GetButtonDown("Horizontal");
+        bool vDown = manager.isAction ? false : Input.GetButtonDown("Vertical");
+        bool hUp = manager.isAction ? false : Input.GetButtonUp("Horizontal");
+        bool vUp = manager.isAction ? false : Input.GetButtonUp("Vertical");
 
         //Check Horizontal Move
         if (hDown)
@@ -63,25 +66,25 @@ public class PlayerAction : MonoBehaviour
         //Direction
         if (vDown && v == 1)
         {
-            dirVec = Vector3.up;
+            dirVec = Vector2.up;
         }
         else if (vDown && v == -1)
         {
-            dirVec = Vector3.down;
+            dirVec = Vector2.down;
         }
         else if (hDown && h == -1)
         {
-            dirVec = Vector3.left;
+            dirVec = Vector2.left;
         }
         else if (hDown && h == 1)
         {
-            dirVec = Vector3.right;
+            dirVec = Vector2.right;
         }
 
         //Scan Object
         if (Input.GetButtonDown("Jump") && scanObject != null)
         {
-            Debug.Log("This is : " + scanObject.name);
+            manager.Action(scanObject);
         }
 
     }
@@ -93,7 +96,7 @@ public class PlayerAction : MonoBehaviour
 
         //Ray
         Debug.DrawRay(rigid.position, dirVec * 0.7f, new Color(0, 1, 0));
-        RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, dirVec, 0.7f, LayerMask.GetMask("Object"));
+        rayHit = Physics2D.Raycast(rigid.position, dirVec, 0.7f, LayerMask.GetMask("Object"));
 
         if (rayHit.collider != null)
         {
@@ -103,5 +106,6 @@ public class PlayerAction : MonoBehaviour
         {
             scanObject = null;
         }
+
     }
 }
